@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="HilresChart.Views.ShellPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="using:HilresChart.Views"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <local:ChartPage x:Key="ChartPage" />
+    </Page.Resources>
+
+    <NavigationView x:Name="shellNavigation" PaneDisplayMode="LeftCompact" IsBackButtonVisible="Collapsed">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Icon="FourBars" Content="Chart" Tag="{StaticResource ChartPage}" />
+        </NavigationView.MenuItems>
+        <Frame x:Name="contentFrame" />
+    </NavigationView>
+</Page>
