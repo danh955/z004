@@ -23,9 +23,10 @@
             <TextBlock Text="Chart page and other stuff." Padding="5" />
         </Grid>
         <!-- Left column -->
-        <Grid Grid.Row="1" Grid.Column="0" Background="Honeydew" BorderThickness="1,0,1,0" BorderBrush="Gray">
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0" Background="Honeydew" BorderThickness="1,0,1,0" BorderBrush="Gray">
+            <ChartControls:PortfolioSelectorControl />
             <ChartControls:StockListControl />
-        </Grid>
+        </StackPanel>
         <!-- Right area -->
         <Grid Grid.Row="1" Grid.Column="1">
             <TextBlock Text="Right side." Padding="5" />

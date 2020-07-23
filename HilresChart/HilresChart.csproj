@@ -125,6 +125,9 @@
     <Compile Include="Views\ChartPage.xaml.cs">
       <DependentUpon>ChartPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Chart\PortfolioSelectorControl.xaml.cs">
+      <DependentUpon>PortfolioSelectorControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Chart\StockListControl.xaml.cs">
       <DependentUpon>StockListControl.xaml</DependentUpon>
     </Compile>
@@ -156,6 +159,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Views\ChartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Chart\PortfolioSelectorControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

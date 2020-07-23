@@ -1,4 +1,4 @@
-﻿// <copyright file="GetListOfPortfoliosQuery.cs" company="Hilres">
+﻿// <copyright file="GetAllPortfoliosQuery.cs" company="Hilres">
 // Copyright (c) Hilres. All rights reserved.
 // </copyright>
 

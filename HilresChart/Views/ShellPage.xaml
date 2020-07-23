@@ -12,7 +12,7 @@
         <local:ChartPage x:Key="ChartPage" />
     </Page.Resources>
 
-    <NavigationView x:Name="shellNavigation" PaneDisplayMode="LeftCompact" IsBackButtonVisible="Collapsed">
+    <NavigationView x:Name="shellNavigation" PaneDisplayMode="LeftCompact" IsBackButtonVisible="Collapsed" IsPaneOpen="False">
         <NavigationView.MenuItems>
             <NavigationViewItem Icon="FourBars" Content="Chart" Tag="{StaticResource ChartPage}" />
         </NavigationView.MenuItems>

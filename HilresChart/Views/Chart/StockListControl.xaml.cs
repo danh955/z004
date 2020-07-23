@@ -4,8 +4,10 @@
 
 namespace HilresChart.Views.Chart
 {
-    using HilresChart.Core;
+    using System.Collections.ObjectModel;
     using HilresChart.Core.Queries;
+    using HilresChart.Model;
+    using Telerik.UI.Xaml.Controls.Grid;
     using Windows.UI.Xaml.Controls;
 
     /// <summary>
@@ -13,18 +15,18 @@ namespace HilresChart.Views.Chart
     /// </summary>
     public sealed partial class StockListControl : UserControl
     {
-        private readonly ICoreService coreService;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="StockListControl"/> class.
         /// </summary>
         public StockListControl()
         {
             this.InitializeComponent();
-            this.coreService = App.GetCoreService();
-            //// var query = new GetAllStocksQuery();
-            var query = new GetAllPortfoliosQuery();
-            this.DataGrid.ItemsSource = this.coreService.SendAsync(query).Result;
+            var coreService = App.GetCoreService();
+            var loadStocks = coreService.SendAsync(new GetAllStocksQuery()).Result;
+            this.Stocks = new ObservableCollection<Stock>(loadStocks);
+            this.DataGrid.ItemsSource = this.Stocks;
         }
+
+        private ObservableCollection<Stock> Stocks { get; set; }
     }
 }

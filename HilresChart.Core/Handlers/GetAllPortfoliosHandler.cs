@@ -14,7 +14,7 @@ namespace HilresChart.Core.Handlers
     /// <summary>
     /// Get all the portfolios handler class.
     /// </summary>
-    internal class GetAllPortfoliosHandler : IRequestHandler<GetAllPortfoliosQuery, List<Portfolio>>
+    public class GetAllPortfoliosHandler : IRequestHandler<GetAllPortfoliosQuery, List<Portfolio>>
     {
         /// <inheritdoc/>
         public async Task<List<Portfolio>> Handle(GetAllPortfoliosQuery request, CancellationToken cancellationToken)
@@ -26,6 +26,7 @@ namespace HilresChart.Core.Handlers
         {
             var portfolios = new List<Portfolio>()
             {
+                new Portfolio() { Name = "Default" },
                 new Portfolio() { Name = "Regular IRA" },
                 new Portfolio() { Name = "Roth IRA" },
                 new Portfolio() { Name = "Regular" },

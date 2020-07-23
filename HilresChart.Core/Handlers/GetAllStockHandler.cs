@@ -15,7 +15,7 @@ namespace HilresChart.Core.Handlers
     /// <summary>
     /// Get all the stock handler class.
     /// </summary>
-    internal class GetAllStockHandler : IRequestHandler<GetAllStocksQuery, List<Stock>>
+    public class GetAllStockHandler : IRequestHandler<GetAllStocksQuery, List<Stock>>
     {
         /// <inheritdoc/>
         public async Task<List<Stock>> Handle(GetAllStocksQuery request, CancellationToken cancellationToken)

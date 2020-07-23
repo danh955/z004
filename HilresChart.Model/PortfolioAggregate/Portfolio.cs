@@ -21,6 +21,11 @@ namespace HilresChart.Model.PortfolioAggregate
         }
 
         /// <summary>
+        /// Gets or sets ID.
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
         /// Gets or sets name of portfolio.
         /// </summary>
         public string Name { get; set; }
