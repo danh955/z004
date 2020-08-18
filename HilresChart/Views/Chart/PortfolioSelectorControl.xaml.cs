@@ -4,9 +4,7 @@
 
 namespace HilresChart.Views.Chart
 {
-    using System.Collections.ObjectModel;
-    using HilresChart.Core.Queries;
-    using HilresChart.Model.PortfolioAggregate;
+    using HilresChart.Core.Portfolio;
     using Windows.UI.Xaml.Controls;
 
     /// <summary>
@@ -19,17 +17,13 @@ namespace HilresChart.Views.Chart
         /// </summary>
         public PortfolioSelectorControl()
         {
+            this.PortfolioService = App.CoreService.GetService<IPortfolioService>();
             this.InitializeComponent();
-            var coreService = App.GetCoreService();
-            var loadPortfolios = coreService.SendAsync(new GetAllPortfoliosQuery()).Result;
-            this.Portfolios = new ObservableCollection<Portfolio>(loadPortfolios);
-            this.PortfolioSelector.ItemsSource = this.Portfolios;
-            this.PortfolioSelector.SelectedIndex = 0;
         }
 
         /// <summary>
-        /// Gets list of Portfolios.
+        /// Gets portfolio service.
         /// </summary>
-        internal ObservableCollection<Portfolio> Portfolios { get; private set; }
+        internal IPortfolioService PortfolioService { get; private set; }
     }
 }

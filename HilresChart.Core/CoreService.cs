@@ -4,9 +4,7 @@
 
 namespace HilresChart.Core
 {
-    using System.Threading;
-    using System.Threading.Tasks;
-    using MediatR;
+    using HilresChart.Core.Portfolio;
     using Microsoft.Extensions.DependencyInjection;
 
     /// <summary>
@@ -20,10 +18,9 @@ namespace HilresChart.Core
         public CoreService()
         {
             var container = new ServiceCollection()
-                .AddMediatR(this.GetType().Assembly);
+                .AddSingleton<IPortfolioService>(new PortfolioService());
 
             this.Container = container.BuildServiceProvider();
-            this.Mediator = this.Container.GetRequiredService<IMediator>();
         }
 
         /// <summary>
@@ -31,15 +28,10 @@ namespace HilresChart.Core
         /// </summary>
         internal ServiceProvider Container { get; private set; }
 
-        /// <summary>
-        /// Gets mediator.
-        /// </summary>
-        internal IMediator Mediator { get; private set; }
-
         /// <inheritdoc/>
-        public async Task<TResponse> SendAsync<TResponse>(IRequest<TResponse> request, CancellationToken cancellationToken = default)
+        public TResponse GetService<TResponse>()
         {
-            return await this.Mediator.Send(request, cancellationToken).ConfigureAwait(false);
+            return this.Container.GetService<TResponse>();
         }
     }
 }

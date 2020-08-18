@@ -5,10 +5,7 @@
 namespace HilresChart
 {
     using System;
-    using System.Reflection;
     using HilresChart.Core;
-    using MediatR;
-    using Microsoft.Extensions.DependencyInjection;
     using Windows.ApplicationModel;
     using Windows.ApplicationModel.Activation;
     using Windows.UI.Xaml;
@@ -20,8 +17,6 @@ namespace HilresChart
     /// </summary>
     public sealed partial class App : Application
     {
-        private ICoreService coreService;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="App"/> class.
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -34,20 +29,9 @@ namespace HilresChart
         }
 
         /// <summary>
-        /// Gets the core service.
+        /// Gets core service.
         /// </summary>
-        /// <returns>CoreService.</returns>
-        public static ICoreService GetCoreService()
-        {
-            App app = (App)App.Current;
-
-            if (app.coreService == null)
-            {
-                app.coreService = new CoreService();
-            }
-
-            return app.coreService;
-        }
+        public static ICoreService CoreService => new CoreService();
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points

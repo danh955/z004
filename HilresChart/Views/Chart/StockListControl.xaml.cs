@@ -4,10 +4,6 @@
 
 namespace HilresChart.Views.Chart
 {
-    using System.Collections.ObjectModel;
-    using HilresChart.Core.Queries;
-    using HilresChart.Model;
-    using Telerik.UI.Xaml.Controls.Grid;
     using Windows.UI.Xaml.Controls;
 
     /// <summary>
@@ -21,12 +17,12 @@ namespace HilresChart.Views.Chart
         public StockListControl()
         {
             this.InitializeComponent();
-            var coreService = App.GetCoreService();
-            var loadStocks = coreService.SendAsync(new GetAllStocksQuery()).Result;
-            this.Stocks = new ObservableCollection<Stock>(loadStocks);
-            this.DataGrid.ItemsSource = this.Stocks;
+            ////var coreService = App.GetCoreService();
+            ////var loadStocks = coreService.SendAsync(new GetAllStocksQuery()).Result;
+            ////this.Stocks = new ObservableCollection<Stock>(loadStocks);
+            ////this.DataGrid.ItemsSource = this.Stocks;
         }
 
-        private ObservableCollection<Stock> Stocks { get; set; }
+        ////private ObservableCollection<Stock> Stocks { get; set; }
     }
 }

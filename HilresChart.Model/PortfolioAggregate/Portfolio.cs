@@ -17,7 +17,7 @@ namespace HilresChart.Model.PortfolioAggregate
         /// </summary>
         public Portfolio()
         {
-            this.Items = new List<PortfolioItem>();
+            this.Trades = new List<PortfolioTrade>();
         }
 
         /// <summary>
@@ -31,8 +31,8 @@ namespace HilresChart.Model.PortfolioAggregate
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets list of portfolio items.
+        /// Gets or sets list of portfolio trades.
         /// </summary>
-        public List<PortfolioItem> Items { get; set; }
+        public List<PortfolioTrade> Trades { get; set; }
     }
 }

@@ -131,6 +131,18 @@
     <Compile Include="Views\Chart\StockListControl.xaml.cs">
       <DependentUpon>StockListControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PortfolioPage.xaml.cs">
+      <DependentUpon>PortfolioPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Portfolio\PortfolioHeaderControl.xaml.cs">
+      <DependentUpon>PortfolioHeaderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Portfolio\PortfolioNameListControl.xaml.cs">
+      <DependentUpon>PortfolioNameListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Portfolio\PortfolioStockListControl.xaml.cs">
+      <DependentUpon>PortfolioStockListControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
@@ -167,6 +179,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Chart\StockListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PortfolioPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Portfolio\PortfolioHeaderControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Portfolio\PortfolioNameListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Portfolio\PortfolioStockListControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -219,6 +247,7 @@
       <Name>HilresChart.Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

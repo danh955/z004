@@ -10,11 +10,13 @@
 
     <Page.Resources>
         <local:ChartPage x:Key="ChartPage" />
+        <local:PortfolioPage x:Key="PortfolioPage" />
     </Page.Resources>
 
     <NavigationView x:Name="shellNavigation" PaneDisplayMode="LeftCompact" IsBackButtonVisible="Collapsed" IsPaneOpen="False">
         <NavigationView.MenuItems>
             <NavigationViewItem Icon="FourBars" Content="Chart" Tag="{StaticResource ChartPage}" />
+            <NavigationViewItem Icon="Folder" Content="Portfolio" Tag="{StaticResource PortfolioPage}" />
         </NavigationView.MenuItems>
         <Frame x:Name="contentFrame" />
     </NavigationView>

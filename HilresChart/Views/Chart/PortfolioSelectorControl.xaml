@@ -10,6 +10,10 @@
     d:DesignWidth="200">
 
     <Grid>
-        <ComboBox x:Name="PortfolioSelector" DisplayMemberPath="Name" Width="200" />
+        <ComboBox x:Name="PortfolioSelector" 
+                  DisplayMemberPath="Name" 
+                  ItemsSource="{x:Bind PortfolioService.PortfolioNames}" 
+                  SelectedIndex="0" 
+                  Width="200" />
     </Grid>
 </UserControl>
